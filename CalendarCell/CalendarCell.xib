@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CalendarCell" id="gTV-IL-0wX" customClass="CalendarCell" customModule="TV_Tracker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="42" height="41"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="42" height="41"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fg3-CN-7eA">
+                        <rect key="frame" x="4" y="3.5" width="34" height="34"/>
+                        <color key="backgroundColor" red="0.99607843137254903" green="0.19607843137254902" blue="0.48627450980392156" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="34" id="aus-O8-A6r"/>
+                            <constraint firstAttribute="height" constant="34" id="nc0-pi-slk"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="17"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J91-KB-as5">
+                        <rect key="frame" x="12" y="10" width="18" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uJG-SN-th6">
+                        <rect key="frame" x="21" y="19" width="0.0" height="0.0"/>
+                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="fg3-CN-7eA" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="41F-mp-0Sf"/>
+                <constraint firstItem="uJG-SN-th6" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="4u2-7V-7yY"/>
+                <constraint firstItem="uJG-SN-th6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="19" id="Sf4-DE-01v"/>
+                <constraint firstItem="J91-KB-as5" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="VIU-tk-lIq"/>
+                <constraint firstItem="fg3-CN-7eA" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="kvh-MN-qZW"/>
+                <constraint firstItem="J91-KB-as5" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="sOZ-8g-Q6W"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="42" height="41"/>
+            <connections>
+                <outlet property="dateHighlight" destination="fg3-CN-7eA" id="X3i-8C-Lu1"/>
+                <outlet property="dateLabel" destination="J91-KB-as5" id="L0o-Od-w2L"/>
+                <outlet property="eventDot" destination="uJG-SN-th6" id="hdH-et-LDZ"/>
+            </connections>
+            <point key="canvasLocation" x="128" y="150.67466266866569"/>
+        </collectionViewCell>
+    </objects>
+</document>
