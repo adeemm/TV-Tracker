@@ -11,6 +11,25 @@ import UIKit
 
 let formatter = DateFormatter()
 
+// Gets specified regex capture group
+func regexCapture(pattern: String, text: String, group: Int) -> [String] {
+    do {
+        let regex = try NSRegularExpression(pattern: pattern)
+        let matches = regex.matches(in: text, range: NSRange(text.startIndex..., in: text))
+        return matches.map { match in
+            let rangeBounds = match.range(at: group)
+            guard let range = Range(rangeBounds, in: text) else {
+                return ""
+            }
+            return String(text[range])
+        }
+    }
+    catch let error {
+        print("Invalid regex: \(error.localizedDescription)")
+        return []
+    }
+}
+
 // Remove unrecognized characters before performing API request
 func cleanURL(input: String) -> String {
     return input.replacingOccurrences(of: " ", with: "-").replacingOccurrences(of: "\'", with: "")

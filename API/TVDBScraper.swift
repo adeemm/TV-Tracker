@@ -30,13 +30,11 @@ func getImages(id: Int) -> [String:Data]? {
             if let occurence = source.range(of: title) {
                 source.removeSubrange(source.startIndex...occurence.lowerBound)
                 
-                if let attributeSrc = source.range(of: "src=") {
-                    let index = source.index(attributeSrc.lowerBound, offsetBy: 4)
-                    source.removeSubrange(source.startIndex...index)
-                    source.removeSubrange(source.firstIndex(of: ">")!...)
-                    let imageString = String(source.prefix(source.count - 1).suffix(source.count - 1))
-                    
-                    if let imageURL = URL(string: imageString) {
+                let pattern = #"<img\s.*?src=(?:'|")([^'">]+)(?:'|")"#
+                let group = regexCapture(pattern: pattern, text: source, group: 1)
+                
+                if let first = group.first {
+                    if let imageURL = URL(string: first) {
                         if let image = downloadImage(url: imageURL) {
                             images[title] = image
                         }
