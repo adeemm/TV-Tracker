@@ -40,7 +40,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         if let shows = decodeShows(fileName: "shows.json") {
             for show in shows {
-                // Value should always exist, but unwraped safely just in case to prevent a crash
+                // Value should always exist, but unwrapped safely just in case to prevent a crash
                 if let banner = show.tvdb?.banner {
                     showCells.append(CellData.init(bannerImage: UIImage(data: banner), showStrct: show))
                 }
@@ -92,13 +92,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     updatedShow.episodes = updatedEpisodes
                     updatedShow.tvdb = images
                     
-                    // Value should always exist, but unwraped safely just in case to prevent a crash
+                    // Value should always exist, but unwrapped safely just in case to prevent a crash
                     if let banner = images?.banner {
                         updatedCells.append(CellData.init(bannerImage: UIImage(data: banner), showStrct: updatedShow))
                     }
                 }
-                self.showCells = updatedCells
             }
+
+            self.showCells = updatedCells
             
             DispatchQueue.main.async {
                 self.showTableView.reloadData()
