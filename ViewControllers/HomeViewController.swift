@@ -98,10 +98,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     }
                 }
             }
-
-            self.showCells = updatedCells
             
             DispatchQueue.main.async {
+		self.showCells = updatedCells
                 self.showTableView.reloadData()
                 self.refreshControl.endRefreshing()
             }
