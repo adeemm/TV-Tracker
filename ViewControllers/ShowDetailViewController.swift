@@ -64,6 +64,7 @@ class ShowDetailViewController: UIViewController {
         if let summary = showInfo?.summary {
             descriptionTitleLabel.isHidden = false
             summaryTextView.text = stripHTML(input: summary)
+            summaryTextView.contentOffset = .zero
         }
         
         
